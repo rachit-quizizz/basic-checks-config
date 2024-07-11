@@ -24,9 +24,6 @@ jobs:
       - name: Run ESLint
         run: npm run lint # Replace with your linting command
 
-      - name: Run Prettier
-        run: npm run format # Replace with your formatting command
-
       - name: Commit linting/formatting changes
         run: |
           git config user.name "${{ github.actor }}"
