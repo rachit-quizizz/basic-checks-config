@@ -16,16 +16,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '18'
 
       - name: Install dependencies
         run: npm install
 
       - name: Run ESLint
         run: npm run lint # Replace with your linting command
-
-      - name: Run Prettier
-        run: npm run format # Replace with your formatting command
 
       - name: Commit linting/formatting changes
         run: |
