@@ -1,0 +1,38 @@
+name: Lint PRs
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: npm run lint # Replace with your linting command
+
+      - name: Run Prettier
+        run: npm run format # Replace with your formatting command
+
+      - name: Commit linting/formatting changes
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Apply linting and formatting fixes" || exit 0
+          git push
+
+
