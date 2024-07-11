@@ -1,7 +1,6 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue';
 
-const hello2="Hello";
 </script>
 
 <template>
