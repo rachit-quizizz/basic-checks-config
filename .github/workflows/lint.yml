@@ -24,4 +24,4 @@ jobs:
         run: npm install
 
       - name: Run ESLint
-        run: npm run lint # Replace with your linting command
+        run: npm run lint-staged # Replace with your linting command
