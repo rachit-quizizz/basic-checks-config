@@ -1,3 +1,3 @@
 # Vue 3 + Vite
 
-Added to exercise all sorts of checks.
+Added to exercise all sorts of checks..
